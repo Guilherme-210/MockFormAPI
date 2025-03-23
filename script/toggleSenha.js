@@ -1,7 +1,7 @@
 document
   .getElementById("toggleSenha")
   .addEventListener("click", function () {
-    const inputSenha = document.getElementById("inputSenha")
+    const inputSenha = document.getElementById("senha")
     const toggleSenhaIcon = document.getElementById("toggleSenha")
 
     if (inputSenha.type === "password") {
