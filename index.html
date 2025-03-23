@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/1055/1055685.png"
+    />
+    <link rel="stylesheet" href="/style/reset.css" />
+    <link rel="stylesheet" href="/style/style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>formulario simples</h1>
+      <div>
+        <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
+          <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <fieldset>
+        <legend>Formulario</legend>
+        <form action="#">
+          <!-- Nome -->
+          <div class="content_input-span">
+            
+              <label class="labelInput_input" for="inputName"
+                >Digite o seu nome</label
+              >
+              <input
+                type="text"
+                class="labelInput_input"
+                id="inputName"
+                placeholder="Digite o seu nome"
+              />
+            </div>
+
+          <!-- Sobrenome -->
+          <div class="content_input-span">
+            
+              <label class="labelInput_input" for="inputLastname"
+                >Digite o seu sobrenome</label
+              >
+              <input
+                type="text"
+                class="labelInput_input"
+                id="inputLastname"
+                placeholder="Digite o seu sobrenome"
+              />
+            </div>
+
+          <!-- Email -->
+          <div class="content_input-span">
+            
+              <label class="labelInput_input" for="inputEmail"
+                >Digite o seu e-mail</label
+              >
+              <input
+                type="email"
+                class="labelInput_input"
+                id="inputEmail"
+                placeholder="seu.email@email.com"
+              />
+            </div>
+
+          <!-- Endereço -->
+          <div class="content_input-span">
+            
+              <label class="labelInput_input" for="inputAddress"
+                >Digite o seu endereço</label
+              >
+              <input
+                type="text"
+                class="labelInput_input"
+                id="inputAddress"
+                placeholder="Digite o seu endereço"
+              />
+          </div>
+
+          <!-- Senha -->
+          <div class="content_input-span">
+            
+              <label class="labelInput_input" for="inputSenha"
+                >Digite a sua senha</label
+              >
+              <div class="password-container">
+                <input
+                  type="password"
+                  class="labelInput_input"
+                  id="inputSenha"
+                  placeholder="Digite a sua senha 'Senha12+'"
+                />
+                <span id="toggleSenha" class="eye-icon">👁️</span>
+              </div>
+          </div>
+
+          <div class="content_input-span">
+            
+              <label class="labelInput_input" for="confirmSenha"
+                >Confirm a sua senha</label
+              >
+              <div class="password-container">
+                <input
+                  type="password"
+                  class="labelInput_input"
+                  id="confirmSenha"
+                  placeholder="Confirm a sua senha"
+                />
+                <span id="toggleSenha2" class="eye-icon">👁️</span>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" id="submit">Cadastrar</button>
+        </form>
+      </fieldset>
+    </main>
+
+    <footer>
+      <p>© 2025 Desenvolvido por Guilherme Reis.</p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="script/toggleTheme.js"></script>
+  </body>
+</html>
