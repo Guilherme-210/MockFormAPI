@@ -34,7 +34,7 @@ document
         Email: inputEmail.value.trim(),
         Address: inputAddress.value.trim(),
         CPF: inputCPF.value.trim(),
-        password: Password.value,
+        Password: Password.value,
       }
 
       const response = await fetch(
@@ -46,7 +46,14 @@ document
         }
       )
 
-      if (!response.ok) Promise.reject("Erro ao cadastrar usuário!")
+      if (!response.ok) {
+        alert(
+          `⚠️ Erro de cominicação com o banco de dados, cadastro cancelado!\nTente novamente mais tarde`
+        )
+        return Promise.reject(
+          "⚠️ Erro de cominicação com o banco de dados, cadastro cancelado!"
+        )
+      }
 
       inputName.value = ""
       inputCellphone.value = ""
