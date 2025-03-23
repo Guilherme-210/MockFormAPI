@@ -20,10 +20,11 @@ document
         cellphone: document.getElementById("cellphone").value.trim(),
         email: document.getElementById("email").value.trim(),
         address: document.getElementById("address").value.trim(),
+        CPF: document.getElementById("CPF").value.trim(),
         senha: senha.value,
       }
 
-      console.log(`Usuario cadastrado com sucesso: ` + user)
+      console.log("Usuario cadastrado com sucesso: " + user.name)
 
       users.push(user)
     } catch (error) {
