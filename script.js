@@ -16,16 +16,17 @@ let user = {}
 document
   .getElementById("btnSubmit")
   .addEventListener("click", async function () {
-    const senha = document.getElementById("senha")
-    const confirmSenha = document.getElementById("confirmSenha")
+    const Password = inputSenha
+    const confirmSenha = inputConfirmSenha
 
     try {
-      if (senha.value.trim() !== confirmSenha.value.trim()) {
+      if (Password.value.trim() !== confirmSenha.value.trim()) {
         Promise.reject("As senhas nao conferem")
         confirmSenha.classList.add("error")
         return
+      } else {
+        confirmSenha.classList.remove("error")
       }
-      confirmSenha.classList.remove("error")
 
       user = {
         Name: inputName.value.trim(),
@@ -33,12 +34,19 @@ document
         Email: inputEmail.value.trim(),
         Address: inputAddress.value.trim(),
         CPF: inputCPF.value.trim(),
-        Senha: senha.value,
+        password: Password.value,
       }
 
-      console.log("Usuario cadastrado com sucesso: " + user.Name)
+      const response = await fetch(
+        "https://67e05cc17635238f9aad538a.mockapi.io/api/v1/users",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(user),
+        }
+      )
 
-      users.push(user)
+      if (!response.ok) Promise.reject("Erro ao cadastrar usuário!")
 
       inputName.value = ""
       inputCellphone.value = ""
@@ -47,14 +55,18 @@ document
       inputCPF.value = ""
       inputSenha.value = ""
       inputConfirmSenha.value = ""
+
+      console.log(user)
+      users.push(user)
+      return Promise.resolve(
+        console.log("Usuario cadastrado com sucesso: " + user.Name)
+      )
     } catch (error) {
-      console.log("⚠️ Ocorreu um erro:", error.message)
+      return console.log("⚠️ Ocorreu um erro:", error.message)
     }
   })
 
 async function pesquiseCPF() {
-  alert("1")
-
   const user = users.find((user) => user.CPF === inputCPF.value.trim())
 
   try {
@@ -62,23 +74,22 @@ async function pesquiseCPF() {
       Promise.resolve("CPF encontrado")
     } else {
       Promise.reject("CPF não encontrado!")
-      alert("2")
       return
     }
-    alert(`Usuário encontrado: ${user.Name}`)
     inputName.value = user.Name
     inputCellphone.value = user.Cellphone
     inputEmail.value = user.Email
     inputAddress.value = user.Address
     inputCPF.value = user.CPF
-    inputSenha.value = user.Senha
+    inputSenha.value = user.Password
     inputConfirmSenha.value = ""
 
     document.getElementById("toggleSenha").style.display = "none"
 
-    return console.log(`Usuário encontrado: ${user.Name}`)
+    return Promise.resolve(
+      console.log(`Usuário encontrado com sucesso: ${user.Name}`)
+    )
   } catch (error) {
     console.log("⚠️ ", error.message)
-    return alert("⚠️ ", error.message)
   }
 }
