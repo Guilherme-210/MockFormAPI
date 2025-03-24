@@ -5,12 +5,6 @@ const inputAddress = document.getElementById("address")
 const inputCPF = document.getElementById("CPF")
 const inputSenha = document.getElementById("senha")
 const inputConfirmSenha = document.getElementById("confirmSenha")
-
-const users = [
-  { Nome: "João", CPF: "123.456.789-00" },
-  { Nome: "Maria", CPF: "987.654.321-00" },
-  { Nome: "Carlos", CPF: "555.666.777-88" },
-]
 let user = {}
 
 document
