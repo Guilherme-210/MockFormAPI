@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Formulário simples com campos para nome, sobrenome, e-mail, endereço e senha. Inclui funcionalidades interativas, como alternância de visibilidade de senha e tema, com futura integração ao MockAPI." />
+    <meta
+      name="description"
+      content="Formulário simples com campos para nome, sobrenome, e-mail, endereço e senha. Inclui funcionalidades interativas, como alternância de visibilidade de senha e tema, com futura integração ao MockAPI."
+    />
 
     <script
       type="module"
@@ -44,113 +47,95 @@
         <form action="#">
           <!-- Nome -->
           <div class="content_input-span">
-            
-              <label class="labelInput_input" for="name"
-                >Digite o seu nome</label
-              >
-              <input
-                type="text"
-                class="labelInput_input"
-                id="name"
-                placeholder="Digite o seu nome"
-                value="guilherme"
-              />
-            </div>
+            <label class="labelInput_input" for="name">Digite o seu nome</label>
+            <input
+              type="text"
+              class="labelInput_input"
+              id="name"
+              placeholder="Digite o seu nome"
+            />
+          </div>
 
           <!-- CPF -->
           <div class="content_input-span">
-            
-              <label class="labelInput_input" for="CPF"
-                >Digite o seu CPF</label
-              >
-              <input
-                type="text"
-                class="labelInput_input"
-                id="CPF"
-                placeholder="Digite o seu CPF"
-                value="12345678901"
-                onchange="pesquiseCPF()"
-              />
-            </div>
+            <label class="labelInput_input" for="CPF">Digite o seu CPF</label>
+            <input
+              type="text"
+              class="labelInput_input"
+              id="CPF"
+              placeholder="Digite o seu CPF"
+              onchange="pesquiseCPF()"
+            />
+          </div>
 
           <!-- Telefone -->
           <div class="content_input-span">
-            
-              <label class="labelInput_input" for="cellphone"
-                >Digite o seu número de telefone</label
-              >
-              <input
-                type="tel"
-                class="labelInput_input"
-                id="cellphone"
-                placeholder="+55 (12) 12345-1234"
-                value="55 21 96553-0016"
-              />
-            </div>
+            <label class="labelInput_input" for="cellphone"
+              >Digite o seu número de telefone</label
+            >
+            <input
+              type="tel"
+              class="labelInput_input"
+              id="cellphone"
+              placeholder="+55 (12) 12345-1234"
+              pattern="\(\d{2}\) \d{5}-\d{4}"
+            />
+          </div>
 
           <!-- Email -->
           <div class="content_input-span">
-            
-              <label class="labelInput_input" for="email"
-                >Digite o seu e-mail</label
-              >
-              <input
-                type="email"
-                class="labelInput_input"
-                id="email"
-                placeholder="seu.email@email.com"
-                value="seu.email@email.com"
-              />
-            </div>
+            <label class="labelInput_input" for="email"
+              >Digite o seu e-mail</label
+            >
+            <input
+              type="email"
+              class="labelInput_input"
+              id="email"
+              placeholder="seu.email@email.com"
+            />
+          </div>
 
           <!-- Endereço -->
           <div class="content_input-span">
-            
-              <label class="labelInput_input" for="address"
-                >Digite o seu endereço</label
-              >
-              <input
-                type="text"
-                class="labelInput_input"
-                id="address"
-                placeholder="Digite o seu endereço"
-                value="Fort Justenfort"
-              />
+            <label class="labelInput_input" for="address"
+              >Digite o seu endereço</label
+            >
+            <input
+              type="text"
+              class="labelInput_input"
+              id="address"
+              placeholder="Digite o seu endereço"
+            />
           </div>
 
           <!-- Senha -->
           <div class="content_input-span">
-            
-              <label class="labelInput_input" for="senha"
-                >Digite a sua senha</label
-              >
-              <div class="password-container">
-                <input
-                  type="password"
-                  class="labelInput_input"
-                  id="senha"
-                  placeholder="Digite a sua senha 'Senha12+'"
-                  value="12345678"
-                />
-                <span id="toggleSenha" class="eye-icon">👁️</span>
-              </div>
+            <label class="labelInput_input" for="senha"
+              >Digite a sua senha</label
+            >
+            <div class="password-container">
+              <input
+                type="password"
+                class="labelInput_input"
+                id="senha"
+                placeholder="Digite a sua senha 'Senha12+'"
+              />
+              <span id="toggleSenha" class="eye-icon">👁️</span>
+            </div>
           </div>
 
           <div class="content_input-span">
-            
-              <label class="labelInput_input" for="confirmSenha"
-                >Confirm a sua senha</label
-              >
-              <div class="password-container">
-                <input
-                  type="password"
-                  class="labelInput_input"
-                  id="confirmSenha"
-                  placeholder="Confirm a sua senha"
-                  value="12345678"
-                />
-                <span id="toggleSenha2" class="eye-icon">👁️</span>
-              </div>
+            <label class="labelInput_input" for="confirmSenha"
+              >Confirm a sua senha</label
+            >
+            <div class="password-container">
+              <input
+                type="password"
+                class="labelInput_input"
+                id="confirmSenha"
+                placeholder="Confirm a sua senha"
+              />
+              <span id="toggleSenha2" class="eye-icon">👁️</span>
             </div>
           </div>
 
@@ -162,12 +147,12 @@
     <footer>
       <p>© 2025 Desenvolvido por Guilherme Reis.</p>
       <br />
-        <a href="https://github.com/Guilherme-210/MockFormAPI" target="_blank"
-          >Acesse o repositório do projeto <ion-icon name="logo-github"></ion-icon
-        ></a>
-        <a href="https://github.com/Guilherme-210" target="_blank"
-          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
-        ></a>
+      <a href="https://github.com/Guilherme-210/MockFormAPI" target="_blank"
+        >Acesse o repositório do projeto <ion-icon name="logo-github"></ion-icon
+      ></a>
+      <a href="https://github.com/Guilherme-210" target="_blank"
+        >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+      ></a>
     </footer>
     <script src="script.js"></script>
     <script src="script/toggleSenha.js"></script>

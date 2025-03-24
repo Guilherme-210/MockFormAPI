@@ -74,29 +74,37 @@ document
   })
 
 async function pesquiseCPF() {
-  const user = users.find((user) => user.CPF === inputCPF.value.trim())
+  const cpf = inputCPF.value.trim();
 
   try {
-    if (users.find((user) => user.CPF === inputCPF.value.trim())) {
-      Promise.resolve("CPF encontrado")
-    } else {
-      Promise.reject("CPF não encontrado!")
-      return
-    }
-    inputName.value = user.Name
-    inputCellphone.value = user.Cellphone
-    inputEmail.value = user.Email
-    inputAddress.value = user.Address
-    inputCPF.value = user.CPF
-    inputSenha.value = user.Password
-    inputConfirmSenha.value = ""
-
-    document.getElementById("toggleSenha").style.display = "none"
-
-    return Promise.resolve(
-      console.log(`Usuário encontrado com sucesso: ${user.Name}`)
+    const response = await fetch(
+      "https://67e05cc17635238f9aad538a.mockapi.io/api/v1/users"
     )
+    if (!response.ok) {
+      return Promise.reject("Erro ao buscar usuários!")
+    }
+
+    const users = await response.json();
+    const user = users.find(user => user.CPF === cpf);
+
+    if (!user) {
+      alert("CPF não encontrado!");
+      return;
+    }
+
+    inputName.value = user.Name;
+    inputCellphone.value = user.Cellphone;
+    inputEmail.value = user.Email;
+    inputAddress.value = user.Address;
+    inputCPF.value = user.CPF;
+    inputSenha.value = user.Senha;
+    inputConfirmSenha.value = "";
+
+    document.getElementById("toggleSenha").style.display = "none";
+    
   } catch (error) {
-    console.log("⚠️ ", error.message)
+    console.error("Erro:", error.message);
+    alert("⚠️ Erro ao buscar CPF!");
   }
 }
+
