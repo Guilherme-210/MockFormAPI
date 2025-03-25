@@ -2,6 +2,7 @@ import validateCpfCnpj from "./script/validateCpfCnpj.js"
 import validateEmail from "./script/validateEmail.js"
 import validatePassword from "./script/validatePassword.js"
 import formatCpfCnpj from "./script/formatCpfCnpj.js"
+import validateName from "./js/validateName.js"
 
 const inputfirstName = document.getElementById("firstName"),
   inputLastName = document.getElementById("lastName"),
@@ -27,6 +28,10 @@ document
   .getElementById("btnSubmit")
   .addEventListener("click", async function () {
     try {
+      if (!validateName()) {
+        return
+      }
+
       if (!validateCpfCnpj()) {
         return
       }
