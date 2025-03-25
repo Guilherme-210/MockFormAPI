@@ -1,25 +1,9 @@
-document.getElementById("toggleSenha").addEventListener("click", function () {
-  const inputSenha = document.getElementById("senha")
-  const toggleSenhaIcon = document.getElementById("toggleSenha")
+const toggleSenha = document.querySelectorAll(".toggleSenha")
 
-  if (inputSenha.type === "password") {
-    inputSenha.type = "text"
-    toggleSenhaIcon.textContent = "🙈" // Ícone de "esconder"
-  } else {
-    inputSenha.type = "password"
-    toggleSenhaIcon.textContent = "👁️" // Ícone de "mostrar"
-  }
-})
-
-document.getElementById("toggleSenha2").addEventListener("click", function () {
-  const confirmSenha = document.getElementById("confirmSenha")
-  const toggleSenhaIcon2 = document.getElementById("toggleSenha2")
-
-  if (confirmSenha.type === "password") {
-    confirmSenha.type = "text"
-    toggleSenhaIcon2.textContent = "🙈" // Ícone de "esconder"
-  } else {
-    confirmSenha.type = "password"
-    toggleSenhaIcon2.textContent = "👁️" // Ícone de "mostrar"
-  }
+toggleSenha.forEach(icon => {
+  icon.addEventListener("click", function () {
+    const input = this.parentElement.querySelector(".form-password")
+    input.type = input.type === "password" ? "text" : "password"
+    this.classList.toggle("fa-eye")
+  })
 })

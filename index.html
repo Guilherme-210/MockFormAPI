@@ -20,6 +20,13 @@
       rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <link
       rel="icon"
@@ -58,7 +65,6 @@
                 placeholder="Digite o seu nome"
                 autocomplete="given-name"
               />
-              <!-- value="Leandro Amaral" -->
             </div>
 
             <!-- Sobrenome -->
@@ -73,7 +79,6 @@
                 placeholder="Digite o seu sobrenome"
                 autocomplete="family-name"
               />
-              <!-- value="Leandro Amaral" -->
             </div>
           </div>
 
@@ -90,7 +95,6 @@
                 placeholder="Digite o seu CPF: xxx.xxx.xxx-xx"
                 onchange="pesquiseCPF()"
               />
-              <!-- value="123-456-789.01" -->
             </div>
             <!-- Telefone -->
             <div class="content_input-cellphone">
@@ -119,7 +123,6 @@
                   placeholder="+00 (12) 12345-1234"
                   autocomplete="tel-national"
                 />
-                <!-- value="12345678912" -->
               </div>
             </div>
           </div>
@@ -137,7 +140,6 @@
                 placeholder="seu.email@email.com"
                 autocomplete="email"
               />
-              <!-- value="seu.email@email.com" -->
             </div>
           </div>
 
@@ -169,7 +171,6 @@
                 placeholder="Digite o seu estado"
                 autocomplete="region"
               />
-              <!-- value="Rua do Cascão" -->
             </div>
 
             <div class="content_input-numero">
@@ -223,7 +224,6 @@
                 id="address"
                 placeholder="Endereço (Rua, Avenida, etc.)"
               />
-              <!-- value="Rua do Cascão" -->
             </div>
 
             <div class="content_input-numero">
@@ -258,7 +258,7 @@
 
           <div class="div_content">
             <!-- Senha -->
-            <div class="content_input-span">
+            <div class="content_input-password">
               <span class="span_label">
                 <label class="labelInput_input" for="senha"
                   >Digite a sua senha</label
@@ -267,17 +267,16 @@
               <div class="password-container">
                 <input
                   type="password"
-                  class="labelInput_input"
+                  class="labelInput_input form-password"
                   id="senha"
                   placeholder="Digite a sua senha 'Senha12+'"
                 />
-                <span id="toggleSenha" class="eye-icon">👁️</span>
-                <!-- value="123456789" -->
+                <i class="fa-regular fa-eye-slash toggleSenha"></i>
               </div>
             </div>
 
             <!-- confirme senha -->
-            <div class="content_input-span">
+            <div class="content_input-password">
               <span class="span_label">
                 <label class="labelInput_input" for="confirmSenha"
                   >Confirm a sua senha</label
@@ -286,12 +285,11 @@
               <div class="password-container">
                 <input
                   type="password"
-                  class="labelInput_input"
+                  class="form-password labelInput_input"
                   id="confirmSenha"
                   placeholder="Confirm a sua senha"
                 />
-                <span id="toggleSenha2" class="eye-icon">👁️</span>
-                <!-- value="123456789" -->
+                <i class="fa-regular fa-eye-slash toggleSenha"></i>
               </div>
             </div>
           </div>
