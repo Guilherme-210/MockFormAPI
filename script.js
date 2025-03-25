@@ -1,4 +1,5 @@
 import validateEmail from "./script/validateEmail.js"
+import validatePassword from "./script/validatePassword.js"
 
 const inputfirstName = document.getElementById("firstName"),
   inputLastName = document.getElementById("lastName"),
@@ -22,14 +23,12 @@ document
   .getElementById("btnSubmit")
   .addEventListener("click", async function () {
     try {
-      if (!validateEmail().ok) {
+      if (!validateEmail()) {
         return
       }
       inputEmail.classList.remove("error")
 
-      if (inputSenha.value.trim() !== confirmSenha.value.trim()) {
-        Promise.reject("As senhas não conferem!")
-        confirmSenha.classList.add("error")
+      if (!validatePassword()) {
         return
       }
       confirmSenha.classList.remove("error")
@@ -69,6 +68,8 @@ document
           "⚠️ Erro de comunicação com o banco de dados, cadastro cancelado!"
         )
       }
+
+      console.log("enviado")
 
       inputfirstName.value = ""
       inputLastName.value = ""
