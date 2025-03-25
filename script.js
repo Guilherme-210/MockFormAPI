@@ -1,9 +1,11 @@
-import validateEmail from "./script/validateEmail.js"
-import validatePassword from "./script/validatePassword.js"
+// import validateEmail from "./script/validateEmail.js"
+// import validatePassword from "./script/validatePassword.js"
+import formatCpfCnpj from "./script/formatCpfCnpj.js"
+
+formatCpfCnpj()
 
 const inputfirstName = document.getElementById("firstName"),
   inputLastName = document.getElementById("lastName"),
-  inputCPF = document.getElementById("CPF"),
   inputCountryCode = document.getElementById("countryCode"),
   inputCellphone = document.getElementById("cellphone"),
   inputEmail = document.getElementById("email"),
@@ -16,13 +18,15 @@ const inputfirstName = document.getElementById("firstName"),
   inputAddressNumber = document.getElementById("addressNumber"),
   inputComplement = document.getElementById("Complement"),
   inputSenha = document.getElementById("senha"),
-  inputConfirmSenha = document.getElementById("confirmSenha")
+  inputConfirmSenha = document.getElementById("confirmSenha"),
+  inputCPF = document.getElementById("CPF_CNPJ")
 let user = {}
 
 document
   .getElementById("btnSubmit")
   .addEventListener("click", async function () {
     try {
+
       if (!validateEmail()) {
         return
       }
@@ -36,7 +40,7 @@ document
       user = {
         FirstName: inputfirstName.value.trim(),
         LastName: inputLastName.value.trim(),
-        CPF: inputCPF.value.trim(),
+        CPF_CNPJ: inputCPF.value.trim(),
         CountryCode: inputCountryCode.value.trim(),
         Cellphone: inputCellphone.value.trim(),
         Email: inputEmail.value.trim(),
@@ -113,7 +117,7 @@ async function pesquiseCPF() {
 
     inputfirstName.value = user.FirstName
     inputLastName.value = user.LastName
-    inputCPF.value = user.CPF
+    inputCPF.value = user.CPF_CNPJ
     inputCountryCode.value = user.CountryCode
     inputCellphone.value = user.Cellphone
     inputEmail.value = user.Email
