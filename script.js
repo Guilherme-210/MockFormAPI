@@ -1,3 +1,5 @@
+import validateEmail from "./script/validateEmail.js"
+
 const inputfirstName = document.getElementById("firstName"),
   inputLastName = document.getElementById("lastName"),
   inputCPF = document.getElementById("CPF"),
@@ -20,13 +22,17 @@ document
   .getElementById("btnSubmit")
   .addEventListener("click", async function () {
     try {
+      if (!validateEmail().ok) {
+        return
+      }
+      inputEmail.classList.remove("error")
+
       if (inputSenha.value.trim() !== confirmSenha.value.trim()) {
-        Promise.reject("As senhas nao conferem")
+        Promise.reject("As senhas não conferem!")
         confirmSenha.classList.add("error")
         return
-      } else {
-        confirmSenha.classList.remove("error")
       }
+      confirmSenha.classList.remove("error")
 
       user = {
         FirstName: inputfirstName.value.trim(),
@@ -57,10 +63,10 @@ document
 
       if (!response.ok) {
         alert(
-          `⚠️ Erro de cominicação com o banco de dados, cadastro cancelado!\nTente novamente mais tarde`
+          `⚠️ Erro de comunicação com o banco de dados, cadastro cancelado! \nTente novamente mais tarde.`
         )
         return Promise.reject(
-          "⚠️ Erro de cominicação com o banco de dados, cadastro cancelado!"
+          "⚠️ Erro de comunicação com o banco de dados, cadastro cancelado!"
         )
       }
 
@@ -82,9 +88,8 @@ document
       inputComplement.value = ""
 
       console.log(user)
-      users.push(user)
       return Promise.resolve(
-        console.log("Usuario cadastrado com sucesso: " + user.Name)
+        console.log(`Usuário ${user.FirstName} cadastrado com sucesso!`)
       )
     } catch (error) {
       return console.log("⚠️ Ocorreu um erro:", error.message)
