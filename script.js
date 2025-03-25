@@ -1,7 +1,6 @@
-import validateCpfCnpj from "./script/validateCpfCnpj.js"
+import { validateCpfCnpj, formatCpfCnpj } from "./script/validateCpfCnpj.js"
 import validateEmail from "./script/validateEmail.js"
 import validatePassword from "./script/validatePassword.js"
-import formatCpfCnpj from "./script/formatCpfCnpj.js"
 import validateName from "./js/validateName.js"
 
 const inputfirstName = document.getElementById("firstName"),
