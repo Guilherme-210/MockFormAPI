@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Formulário simples com campos para nome, sobrenome, e-mail, endereço e senha. Inclui funcionalidades interativas, como alternância de visibilidade de senha e tema, com futura integração ao MockAPI."
+      content="Formulário simples com campos para nome, sobrenome, e-mail, endereço e senha. Inclui funcionalidades interativas, como alternância de visibilidade de senha e tema, com integração ao MockAPI."
     />
 
     <script
@@ -45,97 +45,254 @@
       <fieldset>
         <legend>Formulario</legend>
         <form action="#">
-          <!-- Nome -->
-          <div class="content_input-span">
-            <label class="labelInput_input" for="name">Digite o seu nome</label>
-            <input
-              type="text"
-              class="labelInput_input"
-              id="name"
-              placeholder="Digite o seu nome"
-            />
-          </div>
-
-          <!-- CPF -->
-          <div class="content_input-span">
-            <label class="labelInput_input" for="CPF">Digite o seu CPF</label>
-            <input
-              type="text"
-              class="labelInput_input"
-              id="CPF"
-              placeholder="Digite o seu CPF"
-              onchange="pesquiseCPF()"
-            />
-          </div>
-
-          <!-- Telefone -->
-          <div class="content_input-span">
-            <label class="labelInput_input" for="cellphone"
-              >Digite o seu número de telefone</label
-            >
-            <input
-              type="tel"
-              class="labelInput_input"
-              id="cellphone"
-              placeholder="+55 (12) 12345-1234"
-              pattern="\(\d{2}\) \d{5}-\d{4}"
-            />
-          </div>
-
-          <!-- Email -->
-          <div class="content_input-span">
-            <label class="labelInput_input" for="email"
-              >Digite o seu e-mail</label
-            >
-            <input
-              type="email"
-              class="labelInput_input"
-              id="email"
-              placeholder="seu.email@email.com"
-            />
-          </div>
-
-          <!-- Endereço -->
-          <div class="content_input-span">
-            <label class="labelInput_input" for="address"
-              >Digite o seu endereço</label
-            >
-            <input
-              type="text"
-              class="labelInput_input"
-              id="address"
-              placeholder="Digite o seu endereço"
-            />
-          </div>
-
-          <!-- Senha -->
-          <div class="content_input-span">
-            <label class="labelInput_input" for="senha"
-              >Digite a sua senha</label
-            >
-            <div class="password-container">
+          <div class="div_content">
+            <!-- Nome -->
+            <div class="content_input-span">
+              <span class="span_label">
+                <label class="labelInput_input" for="firstName">Nome</label>
+              </span>
               <input
-                type="password"
+                type="text"
                 class="labelInput_input"
-                id="senha"
-                placeholder="Digite a sua senha 'Senha12+'"
+                id="firstName"
+                placeholder="Digite o seu nome"
+                autocomplete="given-name"
               />
-              <span id="toggleSenha" class="eye-icon">👁️</span>
+              <!-- value="Leandro Amaral" -->
+            </div>
+
+            <!-- Sobrenome -->
+            <div class="content_input-span">
+              <span class="span_label">
+                <label class="labelInput_input" for="lastName">Sobrenome</label>
+              </span>
+              <input
+                type="text"
+                class="labelInput_input"
+                id="lastName"
+                placeholder="Digite o seu sobrenome"
+                autocomplete="family-name"
+              />
+              <!-- value="Leandro Amaral" -->
             </div>
           </div>
 
-          <div class="content_input-span">
-            <label class="labelInput_input" for="confirmSenha"
-              >Confirm a sua senha</label
-            >
-            <div class="password-container">
+          <div class="div_content">
+            <!-- CPF -->
+            <div class="content_input-span">
+              <span class="span_label">
+                <label class="labelInput_input" for="CPF">CPF</label>
+              </span>
               <input
-                type="password"
+                type="text"
                 class="labelInput_input"
-                id="confirmSenha"
-                placeholder="Confirm a sua senha"
+                id="CPF"
+                placeholder="Digite o seu CPF: xxx.xxx.xxx-xx"
+                onchange="pesquiseCPF()"
               />
-              <span id="toggleSenha2" class="eye-icon">👁️</span>
+              <!-- value="123-456-789.01" -->
+            </div>
+            <!-- Telefone -->
+            <div class="content_input-cellphone">
+              <div class="div_countryCode">
+                <span class="span_label">
+                  <label class="labelInput_input" for="countryCode">DDI</label>
+                </span>
+                <input
+                  type="tel"
+                  class="labelInput_input"
+                  id="countryCode"
+                  placeholder="+00"
+                  autocomplete="tel-country-code"
+                />
+              </div>
+              <div class="div_cellphone">
+                <span class="span_label">
+                  <label class="labelInput_input" for="cellphone"
+                    >Telefone</label
+                  >
+                </span>
+                <input
+                  type="tel"
+                  class="labelInput_input"
+                  id="cellphone"
+                  placeholder="+00 (12) 12345-1234"
+                  autocomplete="tel-national"
+                />
+                <!-- value="12345678912" -->
+              </div>
+            </div>
+          </div>
+
+          <div class="div_content">
+            <!-- Email -->
+            <div class="content_input-email">
+              <label class="labelInput_input" for="email"
+                >Endereço de e-mail</label
+              >
+              <input
+                type="email"
+                class="labelInput_input"
+                id="email"
+                placeholder="seu.email@email.com"
+                autocomplete="email"
+              />
+              <!-- value="seu.email@email.com" -->
+            </div>
+          </div>
+
+          <!-- Endereço -->
+          <div class="div_content">
+            <div class="content_input-bairro">
+              <span class="span_label">
+                <label class="labelInput_input" for="country"
+                  >País/Região</label
+                >
+              </span>
+              <input
+                type="text"
+                class="labelInput_input"
+                id="country"
+                placeholder="Digite o seu país"
+                autocomplete="country-name"
+              />
+            </div>
+
+            <div class="content_input-rua">
+              <span class="span_label">
+                <label class="labelInput_input" for="state">Estado</label>
+              </span>
+              <input
+                type="text"
+                class="labelInput_input"
+                id="state"
+                placeholder="Digite o seu estado"
+                autocomplete="region"
+              />
+              <!-- value="Rua do Cascão" -->
+            </div>
+
+            <div class="content_input-numero">
+              <span class="span_label">
+                <label class="labelInput_input" for="city">Cidade</label>
+              </span>
+              <input
+                type="text"
+                class="labelInput_input"
+                id="city"
+                placeholder="Nome da cidade"
+                autocomplete=""
+              />
+            </div>
+
+            <div class="content_input-numero">
+              <span class="span_label">
+                <label class="labelInput_input" for="CEP">CEP</label>
+              </span>
+              <input
+                type="number"
+                class="labelInput_input"
+                id="CEP"
+                placeholder="Digite o seu CEP"
+                autocomplete="postal-code"
+              />
+            </div>
+          </div>
+
+          <!-- Endereço -->
+          <div class="div_content">
+            <div class="content_input-bairro">
+              <span class="span_label">
+                <label class="labelInput_input" for="district">Bairro</label>
+              </span>
+              <input
+                type="text"
+                class="labelInput_input"
+                id="district"
+                placeholder="Nome do bairro"
+              />
+            </div>
+
+            <div class="content_input-rua">
+              <span class="span_label">
+                <label class="labelInput_input" for="address">Endereço</label>
+              </span>
+              <input
+                type="text"
+                class="labelInput_input"
+                id="address"
+                placeholder="Endereço (Rua, Avenida, etc.)"
+              />
+              <!-- value="Rua do Cascão" -->
+            </div>
+
+            <div class="content_input-numero">
+              <span class="span_label">
+                <label class="labelInput_input" for="addressNumber"
+                  >Número</label
+                >
+              </span>
+              <input
+                type="number"
+                class="labelInput_input"
+                id="addressNumber"
+                placeholder="Numero da casa"
+              />
+            </div>
+
+            <div class="content_input-numero">
+              <span class="span_label">
+                <label class="labelInput_input" for="Complement"
+                  >Complemento</label
+                >
+              </span>
+              <input
+                type="text"
+                class="labelInput_input"
+                id="Complement"
+                placeholder="Digite o seu endereço"
+                autocomplete="address-line3"
+              />
+            </div>
+          </div>
+
+          <div class="div_content">
+            <!-- Senha -->
+            <div class="content_input-span">
+              <span class="span_label">
+                <label class="labelInput_input" for="senha"
+                  >Digite a sua senha</label
+                >
+              </span>
+              <div class="password-container">
+                <input
+                  type="password"
+                  class="labelInput_input"
+                  id="senha"
+                  placeholder="Digite a sua senha 'Senha12+'"
+                />
+                <span id="toggleSenha" class="eye-icon">👁️</span>
+                <!-- value="123456789" -->
+              </div>
+            </div>
+
+            <!-- confirme senha -->
+            <div class="content_input-span">
+              <span class="span_label">
+                <label class="labelInput_input" for="confirmSenha"
+                  >Confirm a sua senha</label
+                >
+              </span>
+              <div class="password-container">
+                <input
+                  type="password"
+                  class="labelInput_input"
+                  id="confirmSenha"
+                  placeholder="Confirm a sua senha"
+                />
+                <span id="toggleSenha2" class="eye-icon">👁️</span>
+                <!-- value="123456789" -->
+              </div>
             </div>
           </div>
 
@@ -147,12 +304,18 @@
     <footer>
       <p>© 2025 Desenvolvido por Guilherme Reis.</p>
       <br />
-      <a href="https://github.com/Guilherme-210/MockFormAPI" target="_blank"
-        >Acesse o repositório do projeto <ion-icon name="logo-github"></ion-icon
-      ></a>
-      <a href="https://github.com/Guilherme-210" target="_blank"
-        >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
-      ></a>
+      <p>
+        <a href="https://github.com/Guilherme-210" target="_blank"
+          >Acesse o repositório do projeto
+          <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
+      <br />
+      <p>
+        <a href="https://github.com/Guilherme-210/MockFormAPI" target="_blank"
+          >Acesse o meu GitHub <ion-icon name="logo-github"></ion-icon
+        ></a>
+      </p>
     </footer>
     <script src="script.js"></script>
     <script src="script/toggleSenha.js"></script>

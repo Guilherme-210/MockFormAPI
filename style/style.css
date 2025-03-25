@@ -164,7 +164,7 @@ fieldset {
   border-radius: var(--border-radius-medium);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   color: var(--font-color);
-  padding: var(--padding-medium);
+  padding: var(--padding-large);
   margin-bottom: 20px;
   gap: 1rem;
 }
@@ -187,19 +187,7 @@ form {
   gap: var(--margin-medium);
 }
 /* estilização dos div inputs */
-.inputs {
-  display: flex;
-  margin: var(--margin-medium) 0;
-  gap: 1rem;
-  align-items: center;
-}
-.inputs_senha {
-  width: 80%;
-  margin: 0;
-}
-/* estilização do fieldset - input */
-input,
-select {
+input {
   background-color: var(--bg-color);
   border: 2px solid var(--border-color);
   border-radius: var(--border-radius-small);
@@ -207,20 +195,10 @@ select {
   display: block;
   font-size: var(--font-size-small);
   padding: var(--padding-medium);
-  text-align: end;
+  text-align: initial;
   width: 100%;
 }
-input:hover,
-select:hover {
-  border: 2px solid var(--button-bg-color);
-}
-/* estilização do fieldset - operadores */
-select {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  width: 4rem;
-}
-select:hover {
+input:hover {
   border: 2px solid var(--button-bg-color);
 }
 /* estilização do fieldset - input */
@@ -229,24 +207,59 @@ input[type="number"] {
   -webkit-appearance: none;
   appearance: none;
 }
-.labelInput_input {
+
+.div_content {
   display: flex;
-  max-width: 100%;
+  width: 100%;
+  justify-content: space-between;
 }
 label {
   display: block;
 }
-/* Estilizando o span */
 .content_input-span {
+  width: 47%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
+.span_label {
+  display: flex;
+  align-items:flex-start;
+  width: 100%;
+}
+.content_input-email {
+  width: 100%;
+}
+.content_input-cellphone {
+  width: 47%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.div_countryCode {
+  width: 12%;
+}
+.div_cellphone {
+  width: 85%;
+}
+
+
+.content_input-cell {
+  width: 45%;
+}
+.content_input-bairro {
+  width: 35%;
+}
+.content_input-rua {
+  width: 35%;
+}
+.content_input-numero {
+  width: 10%;
+}
 .span_error {
   color: #f64348;
-  font-size: 0.75rem;
   display: none;
-  /* display: block; */
+  display: block;
 }
 /* estilizando o input type=senha */
 .password-container {
