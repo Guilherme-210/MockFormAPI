@@ -1,12 +1,12 @@
-import { validateCpfCnpj, formatCpfCnpj } from "./script/validateCpfCnpj.js"
-import validateEmail from "./script/validateEmail.js"
-import validatePassword from "./script/validatePassword.js"
 import validateName from "./js/validateName.js"
+import { validateCpfCnpj, formatCpfCnpj } from "./script/validateCpfCnpj.js"
 import {
   formatDDI,
   formatCellphone,
   validateCellphone,
 } from "./js/validateCellphone.js"
+import validateEmail from "./script/validateEmail.js"
+import validatePassword from "./script/validatePassword.js"
 
 const inputfirstName = document.getElementById("firstName"),
   inputLastName = document.getElementById("lastName"),
@@ -77,23 +77,23 @@ document
         Senha: inputSenha.value.trim(),
       }
 
-      // const response = await fetch(
-      //   "https://67e05cc17635238f9aad538a.mockapi.io/api/v1/users",
-      //   {
-      //     method: "POST",
-      //     headers: { "Content-Type": "application/json" },
-      //     body: JSON.stringify(user),
-      //   }
-      // )
+      const response = await fetch(
+        "https://67e05cc17635238f9aad538a.mockapi.io/api/v1/users",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(user),
+        }
+      )
 
-      // if (!response.ok) {
-      //   alert(
-      //     `⚠️ Erro de comunicação com o banco de dados, cadastro cancelado! \nTente novamente mais tarde.`
-      //   )
-      //   return Promise.reject(
-      //     "⚠️ Erro de comunicação com o banco de dados, cadastro cancelado!"
-      //   )
-      // }
+      if (!response.ok) {
+        alert(
+          `⚠️ Erro de comunicação com o banco de dados, cadastro cancelado! \nTente novamente mais tarde.`
+        )
+        return Promise.reject(
+          "⚠️ Erro de comunicação com o banco de dados, cadastro cancelado!"
+        )
+      }
 
       console.log("enviado")
 
