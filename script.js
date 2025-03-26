@@ -10,6 +10,7 @@ import validatePassword from "./script/validatePassword.js"
 
 const inputfirstName = document.getElementById("firstName"),
   inputLastName = document.getElementById("lastName"),
+  inputCPF = document.getElementById("CPF_CNPJ"),
   inputCountryCode = document.getElementById("countryCode"),
   inputCellphone = document.getElementById("cellphone"),
   inputEmail = document.getElementById("email"),
@@ -22,8 +23,7 @@ const inputfirstName = document.getElementById("firstName"),
   inputAddressNumber = document.getElementById("addressNumber"),
   inputComplement = document.getElementById("Complement"),
   inputSenha = document.getElementById("senha"),
-  inputConfirmSenha = document.getElementById("confirmSenha"),
-  inputCPF = document.getElementById("CPF_CNPJ")
+  inputConfirmSenha = document.getElementById("confirmSenha")
 let user = {}
 
 formatCpfCnpj()
@@ -43,7 +43,6 @@ document
       }
       inputCPF.classList.remove("error")
 
-      
       if (!validateCellphone()) {
         return
       }
@@ -122,40 +121,3 @@ document
       return console.log("⚠️ Ocorreu um erro:", error.message)
     }
   })
-
-async function pesquiseCPF() {
-  const cpf = inputCPF.value.trim()
-
-  try {
-    const response = await fetch(
-      "https://67e05cc17635238f9aad538a.mockapi.io/api/v1/users"
-    )
-    if (!response.ok) return Promise.reject("Erro ao buscar usuários!")
-
-    const users = await response.json()
-    const user = users.find((user) => user.CPF === cpf)
-
-    if (!user) return Promise.reject("CPF não encontrado!")
-
-    inputfirstName.value = user.FirstName
-    inputLastName.value = user.LastName
-    inputCPF.value = user.CPF_CNPJ
-    inputCountryCode.value = user.CountryCode
-    inputCellphone.value = user.Cellphone
-    inputEmail.value = user.Email
-    inputCountry.value = user.Country
-    inputState.value = user.State
-    inputCity.value = user.City
-    inputCEP.value = user.CEP
-    inputDistrict.value = user.District
-    inputAddress.value = user.Address
-    inputAddressNumber.value = user.AddressNumber
-    inputComplement.value = user.Comment
-    inputSenha.value = user.Senha
-    inputConfirmSenha.value = ""
-
-    document.getElementById("toggleSenha").style.display = "none"
-  } catch (error) {
-    console.error("Erro:", error.message)
-  }
-}
