@@ -43,3 +43,20 @@ export function formatCellphone() {
     ev.target.value = formattedValue
   })
 }
+
+export function validateCellphone() {
+  let cellphone = document.getElementById("cellphone")
+  const value = document.getElementById("cellphone").value.trim()
+
+  try {
+    if (value.length < 14) {
+      cellphone.classList.add("error")
+      alert("Numero de telefone incompleto!")
+      Promise.reject("Numero de telefone incompleto!")
+      return
+    }
+    return Promise.resolve("Numero de telefone validado")
+  } catch (error) {
+    console.erro(`Ocorreu um erro: ${error}`)
+  }
+}

@@ -2,7 +2,11 @@ import { validateCpfCnpj, formatCpfCnpj } from "./script/validateCpfCnpj.js"
 import validateEmail from "./script/validateEmail.js"
 import validatePassword from "./script/validatePassword.js"
 import validateName from "./js/validateName.js"
-import { formatDDI, formatCellphone } from "./js/validateCellphone.js"
+import {
+  formatDDI,
+  formatCellphone,
+  validateCellphone,
+} from "./js/validateCellphone.js"
 
 const inputfirstName = document.getElementById("firstName"),
   inputLastName = document.getElementById("lastName"),
@@ -39,10 +43,11 @@ document
       }
       inputCPF.classList.remove("error")
 
-    // if (!validateCellphone()) {
-    //   return
-    // }
-    //   inputCountry.classList.remove("error")
+      
+      if (!validateCellphone()) {
+        return
+      }
+      inputCellphone.classList.remove("error")
 
       if (!validateEmail()) {
         return
