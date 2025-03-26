@@ -39,6 +39,8 @@
   --hover-text-color: #000000;
   --toggle-theme-icon: #007bff;
 
+  --required-color: #ff0000;
+
   --details-background-color: #e2e1e1;
   --code-background-color: #cfcdcd;
   --code-border-color: #929090;
@@ -68,6 +70,8 @@
   --button-hover-bg-color: #333;
   --hover-text-color: #fff;
   --toggle-theme-icon: #ffd700;
+
+  --required-color: #ff0000;
 
   --details-background-color: rgb(46, 46, 46);
   --code-background-color: #282c34;
@@ -215,6 +219,9 @@ input[type="number"] {
 }
 label {
   display: block;
+}
+.required {
+  color: var(--required-color);
 }
 .content_input-span {
   width: 47%;

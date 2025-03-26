@@ -50,13 +50,15 @@
 
     <main>
       <fieldset>
-        <legend>Formulario</legend>
+        <legend>Detalhes de faturamento</legend>
         <form action="#">
           <div class="div_content">
             <!-- Nome -->
             <div class="content_input-span">
               <span class="span_label">
-                <label class="labelInput_input" for="firstName">Nome</label>
+                <label class="labelInput_input" for="firstName"
+                  >Nome <span class="required" aria-hidden="true">*</span></label
+                >
               </span>
               <input
                 type="text"
@@ -70,7 +72,9 @@
             <!-- Sobrenome -->
             <div class="content_input-span">
               <span class="span_label">
-                <label class="labelInput_input" for="lastName">Sobrenome</label>
+                <label class="labelInput_input" for="lastName"
+                  >Sobrenome <span class="required" aria-hidden="true">*</span></label
+                >
               </span>
               <input
                 type="text"
@@ -86,7 +90,9 @@
             <!-- CPF -->
             <div class="content_input-span">
               <span class="span_label">
-                <label class="labelInput_input" for="CPF_CNPJ">CPF/CNPJ</label>
+                <label class="labelInput_input" for="CPF_CNPJ"
+                  >CPF/CNPJ <span class="required" aria-hidden="true">*</span></label
+                >
               </span>
               <input
                 type="text"
@@ -101,7 +107,9 @@
             <div class="content_input-cellphone">
               <div class="div_countryCode">
                 <span class="span_label">
-                  <label class="labelInput_input" for="countryCode">DDI</label>
+                  <label class="labelInput_input" for="countryCode"
+                    >DDI <span class="required" aria-hidden="true">*</span></label
+                  >
                 </span>
                 <input
                   type="tel"
@@ -114,7 +122,7 @@
               <div class="div_cellphone">
                 <span class="span_label">
                   <label class="labelInput_input" for="cellphone"
-                    >Telefone</label
+                    >Telefone <span class="required" aria-hidden="true">*</span></label
                   >
                 </span>
                 <input
@@ -132,7 +140,7 @@
             <!-- Email -->
             <div class="content_input-email">
               <label class="labelInput_input" for="email"
-                >Endereço de e-mail</label
+                >Endereço de e-mail <span class="required" aria-hidden="true">*</span></label
               >
               <input
                 type="email"
@@ -149,7 +157,7 @@
             <div class="content_input-bairro">
               <span class="span_label">
                 <label class="labelInput_input" for="country"
-                  >País/Região</label
+                  >País/Região <span class="required" aria-hidden="true">*</span></label
                 >
               </span>
               <input
@@ -163,7 +171,9 @@
 
             <div class="content_input-rua">
               <span class="span_label">
-                <label class="labelInput_input" for="state">Estado</label>
+                <label class="labelInput_input" for="state"
+                  >Estado <span class="required" aria-hidden="true">*</span></label
+                >
               </span>
               <input
                 type="text"
@@ -176,7 +186,9 @@
 
             <div class="content_input-numero">
               <span class="span_label">
-                <label class="labelInput_input" for="city">Cidade</label>
+                <label class="labelInput_input" for="city"
+                  >Cidade <span class="required" aria-hidden="true">*</span></label
+                >
               </span>
               <input
                 type="text"
@@ -189,7 +201,9 @@
 
             <div class="content_input-numero">
               <span class="span_label">
-                <label class="labelInput_input" for="CEP">CEP</label>
+                <label class="labelInput_input" for="CEP"
+                  >CEP <span class="required" aria-hidden="true">*</span></label
+                >
               </span>
               <input
                 type="number"
@@ -205,7 +219,9 @@
           <div class="div_content">
             <div class="content_input-bairro">
               <span class="span_label">
-                <label class="labelInput_input" for="district">Bairro</label>
+                <label class="labelInput_input" for="district"
+                  >Bairro <span class="required" aria-hidden="true">*</span></label
+                >
               </span>
               <input
                 type="text"
@@ -217,7 +233,9 @@
 
             <div class="content_input-rua">
               <span class="span_label">
-                <label class="labelInput_input" for="address">Endereço</label>
+                <label class="labelInput_input" for="address"
+                  >Endereço <span class="required" aria-hidden="true">*</span></label
+                >
               </span>
               <input
                 type="text"
@@ -230,14 +248,14 @@
             <div class="content_input-numero">
               <span class="span_label">
                 <label class="labelInput_input" for="addressNumber"
-                  >Número</label
+                  >Número <span class="required" aria-hidden="true">*</span></label
                 >
               </span>
               <input
                 type="number"
                 class="labelInput_input"
                 id="addressNumber"
-                placeholder="Numero da casa"
+                placeholder="Número"
               />
             </div>
 
@@ -251,7 +269,7 @@
                 type="text"
                 class="labelInput_input"
                 id="Complement"
-                placeholder="Digite o seu endereço"
+                placeholder="casa, bloco, apartamento, etc."
                 autocomplete="address-line3"
               />
             </div>
@@ -262,7 +280,7 @@
             <div class="content_input-password">
               <span class="span_label">
                 <label class="labelInput_input" for="senha"
-                  >Digite a sua senha</label
+                  >Digite a sua senha <span class="required" aria-hidden="true">*</span></label
                 >
               </span>
               <div class="password-container">
@@ -280,7 +298,7 @@
             <div class="content_input-password">
               <span class="span_label">
                 <label class="labelInput_input" for="confirmSenha"
-                  >Confirm a sua senha</label
+                  >Confirm a sua senha <span class="required" aria-hidden="true">*</span></label
                 >
               </span>
               <div class="password-container">
