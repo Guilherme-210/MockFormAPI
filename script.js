@@ -14,6 +14,8 @@ const inputfirstName = document.getElementById("firstName"),
   inputCountryCode = document.getElementById("countryCode"),
   inputCellphone = document.getElementById("cellphone"),
   inputEmail = document.getElementById("email"),
+  inputBirthDate = document.getElementById("birthDate"),
+  inputGender = document.getElementById("gender"),
   inputCountry = document.getElementById("country"),
   inputState = document.getElementById("state"),
   inputCity = document.getElementById("city"),
@@ -65,6 +67,8 @@ document
         CountryCode: inputCountryCode.value.trim(),
         Cellphone: inputCellphone.value.trim(),
         Email: inputEmail.value.trim(),
+        BirthDate: inputBirthDate.value.trim(),
+        Gender: inputGender.value.trim(),
         Country: inputCountry.value.trim(),
         State: inputState.value.trim(),
         City: inputCity.value.trim(),
@@ -102,6 +106,8 @@ document
       inputCountryCode.value = ""
       inputCellphone.value = ""
       inputEmail.value = ""
+      inputBirthDate.value = ""
+      inputGender.value = ""
       inputCountry.value = ""
       inputState.value = ""
       inputCity.value = ""

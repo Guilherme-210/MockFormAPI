@@ -4,6 +4,8 @@ const inputfirstName = document.getElementById("firstName"),
   inputCountryCode = document.getElementById("countryCode"),
   inputCellphone = document.getElementById("cellphone"),
   inputEmail = document.getElementById("email"),
+  inputBirthDate = document.getElementById("birthDate"),
+  inputGender = document.getElementById("gender"),
   inputCountry = document.getElementById("country"),
   inputState = document.getElementById("state"),
   inputCity = document.getElementById("city"),
@@ -35,6 +37,8 @@ async function pesquiseCPF() {
     inputCountryCode.value = user.CountryCode
     inputCellphone.value = user.Cellphone
     inputEmail.value = user.Email
+    inputBirthDate.value = user.BirthDate
+    inputGender.value = user.Gender
     inputCountry.value = user.Country
     inputState.value = user.State
     inputCity.value = user.City
