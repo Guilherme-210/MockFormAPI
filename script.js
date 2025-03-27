@@ -1,12 +1,12 @@
-import validateName from "./js/validateName.js"
-import { validateCpfCnpj, formatCpfCnpj } from "./script/validateCpfCnpj.js"
+import validateName from "./script/name.js"
+import { validateCpfCnpj, formatCpfCnpj } from "./script/cpfCnpj.js"
 import {
   formatDDI,
   formatCellphone,
   validateCellphone,
-} from "./js/validateCellphone.js"
-import validateEmail from "./script/validateEmail.js"
-import validatePassword from "./script/validatePassword.js"
+} from "./script/cellphone.js"
+import validateEmail from "./script/email.js"
+import validatePassword from "./script/password.js"
 
 const inputfirstName = document.getElementById("firstName"),
   inputLastName = document.getElementById("lastName"),
