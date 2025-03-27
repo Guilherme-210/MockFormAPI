@@ -36,11 +36,12 @@
     <link rel="stylesheet" href="/style/reset.css" />
     <link rel="stylesheet" href="/style/style.css" />
 
-    <title>formulário mockado</title>
+    <title>Formulário Mocado</title>
   </head>
+
   <body data-theme="dark">
     <header>
-      <h1>formulário mockado simples</h1>
+      <h1>Formulário Mocado Simples</h1>
       <div>
         <button id="toggle_Theme" class="toggle_Theme" onclick="toggle_Theme()">
           <ion-icon id="icon_Theme" class="theme" name="moon"></ion-icon>
@@ -110,8 +111,9 @@
                 autofocus
               />
             </div>
-            <!-- Telefone -->
+
             <div class="content_input-cellphone">
+              <!-- DDI -->
               <div class="div_countryCode">
                 <span class="span_label">
                   <label class="labelInput_input" for="countryCode"
@@ -128,6 +130,8 @@
                   autocomplete="tel-country-code"
                 />
               </div>
+
+              <!-- Telefone -->
               <div class="div_cellphone">
                 <span class="span_label">
                   <label class="labelInput_input" for="cellphone"
@@ -141,6 +145,7 @@
                   class="labelInput_input"
                   id="cellphone"
                   placeholder="(12) 12345-1234"
+                  maxlength="15"
                   autocomplete="tel-national"
                 />
               </div>
@@ -159,14 +164,14 @@
                 type="email"
                 class="labelInput_input"
                 id="email"
-                placeholder="seu.email@email.com"
+                placeholder="seu.e-mail@email.com"
                 autocomplete="email"
               />
             </div>
           </div>
 
-          <!-- Data de nascimento e gênero -->
           <div class="div_content">
+            <!-- Data de nascimento -->
             <div class="content_input-span">
               <span class="span_label">
                 <label class="labelInput_input" for="birthDate"
@@ -182,6 +187,7 @@
               />
             </div>
 
+          <!-- Gênero -->
             <div class="content_input-span">
               <span class="span_label">
                 <label class="labelInput_input" for="gender"
@@ -198,8 +204,10 @@
             </div>
           </div>
 
-          <!-- Endereço -->
+          <!-- Endereço 1° linha -->
           <div class="div_content">
+
+            <!-- País/Região -->
             <div class="content_input-bairro">
               <span class="span_label">
                 <label class="labelInput_input" for="country"
@@ -212,11 +220,12 @@
                 type="text"
                 class="labelInput_input"
                 id="country"
-                placeholder="Digite o seu país"
+                placeholder="Digite o seu país..."
                 autocomplete="country-name"
               />
             </div>
 
+            <!-- Estado -->
             <div class="content_input-rua">
               <span class="span_label">
                 <label class="labelInput_input" for="state"
@@ -234,6 +243,7 @@
               />
             </div>
 
+            <!-- Cidade -->
             <div class="content_input-numero">
               <span class="span_label">
                 <label class="labelInput_input" for="city"
@@ -251,6 +261,7 @@
               />
             </div>
 
+            <!-- CEP -->
             <div class="content_input-numero">
               <span class="span_label">
                 <label class="labelInput_input" for="CEP"
@@ -268,8 +279,10 @@
             </div>
           </div>
 
-          <!-- Endereço -->
+          <!-- Endereço 2° linha -->
           <div class="div_content">
+
+            <!-- Bairro -->
             <div class="content_input-bairro">
               <span class="span_label">
                 <label class="labelInput_input" for="district"
@@ -286,6 +299,7 @@
               />
             </div>
 
+            <!-- Endereço (Rua, Avenida, etc.) -->
             <div class="content_input-rua">
               <span class="span_label">
                 <label class="labelInput_input" for="address"
@@ -302,6 +316,7 @@
               />
             </div>
 
+            <!-- Número -->
             <div class="content_input-numero">
               <span class="span_label">
                 <label class="labelInput_input" for="addressNumber"
@@ -318,6 +333,7 @@
               />
             </div>
 
+            <!-- Complemento -->
             <div class="content_input-numero">
               <span class="span_label">
                 <label class="labelInput_input" for="Complement"
@@ -349,7 +365,7 @@
                   type="password"
                   class="labelInput_input form-password"
                   id="senha"
-                  placeholder='Digite a sua senha "12345678"'
+                  placeholder='Digite a sua senha "Senha+78*"'
                 />
                 <i
                   class="fa-regular fa-eye-slash toggleSenha"
@@ -362,7 +378,7 @@
             <div class="content_input-password">
               <span class="span_label">
                 <label class="labelInput_input" for="confirmSenha"
-                  >Confirm a sua senha
+                  >Confirme a sua senha
                   <span class="required" aria-hidden="true">*</span></label
                 >
               </span>
@@ -372,14 +388,14 @@
                   type="password"
                   class="form-password labelInput_input"
                   id="confirmSenha"
-                  placeholder='Confirm a sua senha "12345678"'
+                  placeholder='Confirme a sua senha "Senha+78*"'
                 />
                 <i class="fa-regular fa-eye-slash toggleSenha"></i>
               </div>
             </div>
           </div>
 
-          <button type="button" id="btnSubmit">Cadastrar</button>
+          <button type="button" id="submit">Cadastrar</button>
         </form>
       </fieldset>
     </main>

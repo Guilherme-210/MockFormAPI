@@ -21,13 +21,13 @@ export default function validateName() {
     inputfirstName.classList.remove("error")
 
     if (inputLastName.value.length <= 2) {
-      alert("O seu Sobrenome deve ter pelo menos 3 caracteres.")
-      Promise.reject("O seu Sobrenome deve ter pelo menos 3 caracteres.")
+      alert("O seu sobrenome deve ter pelo menos 3 caracteres.")
+      Promise.reject("O seu sobrenome deve ter pelo menos 3 caracteres.")
       inputLastName.classList.add("error")
       return false
     } else if (!regex.test(inputLastName.value)) {
-      alert("O seu Sobrenome não pode conter números ou símbolos.")
-      Promise.reject("O seu Sobrenome não pode conter números ou símbolos.")
+      alert("O seu sobrenome não pode conter números ou símbolos.")
+      Promise.reject("O seu sobrenome não pode conter números ou símbolos.")
       inputLastName.classList.add("error")
       return false
     }
@@ -36,6 +36,6 @@ export default function validateName() {
     // Se for válido, remove erro e adiciona sucesso
     return true
   } catch (error) {
-    console.error(error)
+    console.error(`⚠️ Erro na validação do nome:${error}`)
   }
 }

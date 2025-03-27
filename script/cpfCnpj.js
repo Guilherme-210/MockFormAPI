@@ -36,13 +36,15 @@ export function validateCpfCnpj() {
 
     if (value.length < 14) {
       CPF_CNPJ.classList.add("error")
-      alert("Número minimo de caracter não atingido (11)")
-      Promise.reject("Número minimo de caracter não atingido (11)")
+      alert("Número mínimo de caracteres não atingido (11).")
+      Promise.reject("Número mínimo de caracteres não atingido (11).")
       return
     } else if (value.length > 14 && value.length < 18) {
       CPF_CNPJ.classList.add("error")
-      alert("Confira se não tem nenhum caracter a mais (11) ou faltando (14)")
-      Promise.reject("Confira se não tem nenhum caracter a mais ou faltando")
+      alert("Confira se não tem nenhum caracter faltando CPF(11) CNPJ(14).")
+      Promise.reject(
+        "Confira se não tem nenhum caracter faltando CPF(11) CNPJ(14)."
+      )
       return
     }
 

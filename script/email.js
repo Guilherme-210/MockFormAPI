@@ -15,7 +15,7 @@ export default function validateEmail() {
     }
     return Promise.resolve
   } catch (error) {
-    console.error("⚠️ Erro na validação do e_mail:", error)
+    console.error(`⚠️ Erro na validação do e_mail: ${error}`)
     return false
   }
 }

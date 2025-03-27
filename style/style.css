@@ -199,6 +199,7 @@ input:focus {
 }
 select {
   cursor: pointer;
+  height: 100%;
 }
 /* estilização do fieldset - input */
 input[type="number"]::-webkit-inner-spin-button,

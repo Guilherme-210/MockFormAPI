@@ -33,7 +33,7 @@ formatDDI()
 formatCellphone()
 
 document
-  .getElementById("btnSubmit")
+  .getElementById("submit")
   .addEventListener("click", async function () {
     try {
       if (!validateName()) {
@@ -98,7 +98,7 @@ document
         )
       }
 
-      console.log("enviado")
+      console.log("Enviado.")
 
       inputfirstName.value = ""
       inputLastName.value = ""

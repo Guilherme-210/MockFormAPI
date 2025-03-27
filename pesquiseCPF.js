@@ -47,11 +47,11 @@ async function pesquiseCPF() {
     inputAddress.value = user.Address
     inputAddressNumber.value = user.AddressNumber
     inputComplement.value = user.Comment
-    inputSenha.value = user.Senha
+    inputSenha.value = ""
     inputConfirmSenha.value = ""
 
     // document.getElementById("toggleSenha").style.display = "none"
   } catch (error) {
-    console.error("Erro:", error.message)
+    console.error("⚠️ Erro na validação de CPF/CNPJ:", error.message)
   }
 }

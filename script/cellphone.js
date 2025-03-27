@@ -4,17 +4,9 @@ export function formatDDI() {
     .addEventListener("input", function (ev) {
       let value = ev.target.value.replace(/\D/g, "") // Remove tudo que não for número
 
-      if (value.length <= 1) {
-        alert("O campo de DDI não pode ficar em brenco.")
-        Promise.reject("O campo de DDI não pode ficar em brenco.")
-        country.classList.add("error")
-        return
-      }
-
       country.classList.remove("error")
       ev.target.value = value ? `+${value}` : "" // Adiciona "+" se houver número
-      Promise.resolve
-      return
+      return Promise.resolve
     })
 }
 
@@ -47,16 +39,21 @@ export function formatCellphone() {
 export function validateCellphone() {
   let cellphone = document.getElementById("cellphone")
   const value = document.getElementById("cellphone").value.trim()
-
+  const countryCode = Document.getElementById("countryCode")
   try {
+    if (countryCode.length <= 2) {
+      alert("O campo de DDI não pode ficar em branco.")
+      country.classList.add("error")
+      return Promise.reject("O campo de DDI não pode ficar em branco.")
+    }
+    
     if (value.length < 14) {
       cellphone.classList.add("error")
-      alert("Numero de telefone incompleto!")
-      Promise.reject("Numero de telefone incompleto!")
-      return
+      alert("Número de telefone incompleto!")
+      return Promise.reject("Número de telefone incompleto!")
     }
-    return Promise.resolve("Numero de telefone validado")
+    return Promise.resolve("Número de telefone validado")
   } catch (error) {
-    console.erro(`Ocorreu um erro: ${error}`)
+    console.erro(`⚠️ Erro na validação do telefone: ${error}`)
   }
 }
