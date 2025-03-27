@@ -165,6 +165,38 @@
             </div>
           </div>
 
+          <!-- Data de nascimento e gênero -->
+          <div class="div_content">
+            <div class="content_input-span">
+              <span class="span_label">
+                <label class="labelInput_input" for="birthDate"
+                  >Data de Nascimento
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <input
+                required
+                type="date"
+                class="labelInput_input"
+                id="birthDate"
+              />
+            </div>
+            <div class="content_input-span">
+              <span class="span_label">
+                <label class="labelInput_input" for="gender"
+                  >Gênero
+                  <span class="required" aria-hidden="true">*</span></label
+                >
+              </span>
+              <select required class="labelInput_input" id="gender">
+                <option value="" disabled selected>Escolha o seu gênero</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+          </div>
+
           <!-- Endereço -->
           <div class="div_content">
             <div class="content_input-bairro">
