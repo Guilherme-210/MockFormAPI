@@ -38,19 +38,20 @@ export function formatCellphone() {
 
 export function validateCellphone() {
   let cellphone = document.getElementById("cellphone")
-  const value = document.getElementById("cellphone").value.trim()
-  const countryCode = Document.getElementById("countryCode")
+  const countryCode = document.getElementById("countryCode")
   try {
-    if (countryCode.length <= 2) {
+    if (countryCode.value.length <= 2) {
       alert("O campo de DDI não pode ficar em branco.")
-      country.classList.add("error")
-      return Promise.reject("O campo de DDI não pode ficar em branco.")
+      countryCode.classList.add("error")
+      Promise.reject("O campo de DDI não pode ficar em branco.")
+      return
     }
     
-    if (value.length < 14) {
+    if (cellphone.value.length <= 14) {
       cellphone.classList.add("error")
       alert("Número de telefone incompleto!")
-      return Promise.reject("Número de telefone incompleto!")
+      Promise.reject("Número de telefone incompleto!")
+      return
     }
     return Promise.resolve("Número de telefone validado")
   } catch (error) {

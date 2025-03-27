@@ -32,98 +32,96 @@ formatCpfCnpj()
 formatDDI()
 formatCellphone()
 
-document
-  .getElementById("submit")
-  .addEventListener("click", async function () {
-    try {
-      if (!validateName()) {
-        return
-      }
-
-      if (!validateCpfCnpj()) {
-        return
-      }
-      inputCPF.classList.remove("error")
-
-      if (!validateCellphone()) {
-        return
-      }
-      inputCellphone.classList.remove("error")
-
-      if (!validateEmail()) {
-        return
-      }
-      inputEmail.classList.remove("error")
-
-      if (!validatePassword()) {
-        return
-      }
-      confirmSenha.classList.remove("error")
-
-      user = {
-        FirstName: inputfirstName.value.trim(),
-        LastName: inputLastName.value.trim(),
-        CPF_CNPJ: inputCPF.value.trim(),
-        CountryCode: inputCountryCode.value.trim(),
-        Cellphone: inputCellphone.value.trim(),
-        Email: inputEmail.value.trim(),
-        BirthDate: inputBirthDate.value.trim(),
-        Gender: inputGender.value.trim(),
-        Country: inputCountry.value.trim(),
-        State: inputState.value.trim(),
-        City: inputCity.value.trim(),
-        CEP: inputCEP.value.trim(),
-        District: inputDistrict.value.trim(),
-        Address: inputAddress.value.trim(),
-        AddressNumber: inputAddressNumber.value.trim(),
-        Comment: inputComplement.value.trim(),
-        Senha: inputSenha.value.trim(),
-      }
-
-      const response = await fetch(
-        "https://67e05cc17635238f9aad538a.mockapi.io/api/v1/users",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(user),
-        }
-      )
-
-      if (!response.ok) {
-        alert(
-          `⚠️ Erro de comunicação com o banco de dados, cadastro cancelado! \nTente novamente mais tarde.`
-        )
-        return Promise.reject(
-          "⚠️ Erro de comunicação com o banco de dados, cadastro cancelado!"
-        )
-      }
-
-      console.log("Enviado.")
-
-      inputfirstName.value = ""
-      inputLastName.value = ""
-      inputCPF.value = ""
-      inputCountryCode.value = ""
-      inputCellphone.value = ""
-      inputEmail.value = ""
-      inputBirthDate.value = ""
-      inputGender.value = ""
-      inputCountry.value = ""
-      inputState.value = ""
-      inputCity.value = ""
-      inputCEP.value = ""
-      inputDistrict.value = ""
-      inputAddress.value = ""
-      inputSenha.value = ""
-      inputConfirmSenha.value = ""
-      inputAddressNumber.value = ""
-      inputComplement.value = ""
-
-      console.log(user)
-      return Promise.resolve(
-        console.log(`Usuário ${user.FirstName} cadastrado com sucesso!`)
-      )
-    } catch (error) {
-      return console.log("⚠️ Ocorreu um erro:", error.message)
+document.getElementById("submit").addEventListener("click", async function () {
+  try {
+    if (!validateName()) {
+      return
     }
-  })
+
+    if (!validateCpfCnpj()) {
+      return
+    }
+    inputCPF.classList.remove("error")
+
+    if (!validateCellphone()) {
+      return
+    }
+    inputCellphone.classList.remove("error")
+
+    if (!validateEmail()) {
+      return
+    }
+    inputEmail.classList.remove("error")
+
+    if (!validatePassword()) {
+      return
+    }
+    confirmSenha.classList.remove("error")
+
+    user = {
+      FirstName: inputfirstName.value.trim(),
+      LastName: inputLastName.value.trim(),
+      CPF_CNPJ: inputCPF.value.trim(),
+      CountryCode: inputCountryCode.value.trim(),
+      Cellphone: inputCellphone.value.trim(),
+      Email: inputEmail.value.trim(),
+      BirthDate: inputBirthDate.value.trim(),
+      Gender: inputGender.value.trim(),
+      Country: inputCountry.value.trim(),
+      State: inputState.value.trim(),
+      City: inputCity.value.trim(),
+      CEP: inputCEP.value.trim(),
+      District: inputDistrict.value.trim(),
+      Address: inputAddress.value.trim(),
+      AddressNumber: inputAddressNumber.value.trim(),
+      Comment: inputComplement.value.trim(),
+      Senha: inputSenha.value.trim(),
+    }
+
+    const response = await fetch(
+      "https://67e05cc17635238f9aad538a.mockapi.io/api/v1/users",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user),
+      }
+    )
+
+    if (!response.ok) {
+      alert(
+        `⚠️ Erro de comunicação com o banco de dados, cadastro cancelado! \nTente novamente mais tarde.`
+      )
+      return Promise.reject(
+        "⚠️ Erro de comunicação com o banco de dados, cadastro cancelado!"
+      )
+    }
+
+    console.log("Enviado.")
+
+    inputfirstName.value = ""
+    inputLastName.value = ""
+    inputCPF.value = ""
+    inputCountryCode.value = ""
+    inputCellphone.value = ""
+    inputEmail.value = ""
+    inputBirthDate.value = ""
+    inputGender.value = ""
+    inputCountry.value = ""
+    inputState.value = ""
+    inputCity.value = ""
+    inputCEP.value = ""
+    inputDistrict.value = ""
+    inputAddress.value = ""
+    inputSenha.value = ""
+    inputConfirmSenha.value = ""
+    inputAddressNumber.value = ""
+    inputComplement.value = ""
+
+    console.log(user)
+    return Promise.resolve(
+      console.log(`Usuário ${user.FirstName} cadastrado com sucesso!`)
+    )
+  } catch (error) {
+    return console.log("⚠️ Ocorreu um erro:", error.message)
+  }
+})
