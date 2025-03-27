@@ -25,79 +25,137 @@
   --border-radius-medium: 1rem; /* Raio de borda médio */
   --border-width: 0.5px; /* Largura da borda */
 }
+
+/* Variáveis de cor base */
+:root {
+  /* Cores neutras */
+  --gray-50: #f8f9fa;
+  --gray-100: #f1f3f5;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+
+  /* Cores azuis */
+  --blue-50: #e3f2fd;
+  --blue-100: #bbdefb;
+  --blue-200: #90caf9;
+  --blue-300: #64b5f6;
+  --blue-400: #42a5f5;
+  --blue-500: #2196f3;
+  --blue-600: #1e88e5;
+  --blue-700: #1976d2;
+  --blue-800: #1565c0;
+  --blue-900: #0d47a1;
+
+  /* Cores verdes */
+  --green-50: #e8f5e9;
+  --green-100: #c8e6c9;
+  --green-200: #a5d6a7;
+  --green-300: #81c784;
+  --green-400: #66bb6a;
+  --green-500: #4caf50;
+  --green-600: #43a047;
+  --green-700: #388e3c;
+  --green-800: #2e7d32;
+  --green-900: #1b5e20;
+
+  /* Cores vermelhas */
+  --red-50: #ffebee;
+  --red-100: #ffcdd2;
+  --red-200: #ef9a9a;
+  --red-300: #e57373;
+  --red-400: #ef5350;
+  --red-500: #f44336;
+  --red-600: #e53935;
+  --red-700: #d32f2f;
+  --red-800: #c62828;
+  --red-900: #b71c1c;
+}
+
 /* Variáveis de estilo - Tema claro */
 [data-theme="light"] {
-  /* Cores */
-  --bg-color: #dedfe0;
-  --border-color: #9b9b9b;
-  --text-color: #000;
-  --font-color: #212529;
+  /* Cores base */
+  --bg-color: var(--gray-300);
+  --border-color: var(--gray-400);
+  --text-color: var(--gray-800);
+  --font-color: var(--gray-700);
+  --label-cont-color: #0a7ce7e8;
 
-  --header-bg-color: #f0f0f0b9;
-  --button-bg-color: #007bff;
-  --button-hover-bg-color: #0056b3;
-  --hover-text-color: #000000;
-  --toggle-theme-icon: #007bff;
+  /* Componentes */
+  --header-bg-color: #c6d5e7;
+  --fieldset-bg-color: #c6d5e7;
+  
+  --button-bg-color: var(--blue-600);
+  --button-hover-bg-color: var(--blue-700);
+  --hover-text-color: var(--gray-800);
+  --toggle-theme-icon: var(--blue-600);
+  --text-legend-color: var(--blue-600);
 
-  --required-color: #ff0000;
-  --box-shadow-color: 0 0 10px rgba(83, 83, 83, 0.637);
-  --box-shadow-hover-color: 0 0 15px rgba(0, 123, 255, 0.671); 
-  --text-box-shadow-color: 0 0 15px rgba(0, 0, 0, 0.7);
+  /* Estados e elementos especiais */
+  --required-color: var(--red-500);
+  --box-shadow-color: 0 0 10px rgba(224, 235, 255, 0.877);
+  --box-shadow-hover-color: 0 0 15px rgba(19, 124, 216, 0.705);
+  --text-box-shadow-color: 0 0 15px rgba(30, 146, 248, 0.87);
+  --box-shadow-hover-button: 0 0 10px rgba(0, 123, 255, 0.671);
+  --box-shadow-fieldset: 0 0 10px rgba(0, 123, 255, 0.671);
 
-  --details-background-color: #e2e1e1;
-  --code-background-color: #cfcdcd;
-  --code-border-color: #929090;
-  --code-color: #007bff;
-  --strong-code-color: #007bff;
+  /* Rodapé */
+  --footer-bg-color: #c6d5e7;
+  --footer-text-color: var(--gray-700);
+  --footer-link-color: var(--blue-600);
+  --footer-link-hover-color: var(--blue-700);
 
-  --thead-background-color: #dedfe0;
-  --tbody-background-color: #cfcdcd;
-  --table-font-color: #212529;
-  --border-table-color: #575656a1;
-
-  --footer-bg-color: #ffffff;
-  --footer-text-color: #212529;
-  --footer-link-color: #007bff;
-  --footer-link-hover-color: #0056b3;
+  /* Validação */
+  --error-color: var(--red-500);
+  --success-color: var(--green-500);
 }
 /* Variáveis de estilo - Tema escuro */
 [data-theme="dark"] {
-  /* Cores */
-  --bg-color: #212529;
-  --border-color: #666;
-  --text-color: #000;
-  --font-color: #f1f5f9;
+  /* Cores base */
+  --bg-color: var(--gray-900);
+  --border-color: var(--gray-600);
+  --text-color: var(--gray-100);
+  --font-color: var(--gray-100);
+  --label-cont-color: #61e456c4;
 
-  --header-bg-color: #333;
-  --button-bg-color: #00ff00;
-  --button-hover-bg-color: #333;
-  --hover-text-color: #fff;
-  --toggle-theme-icon: #ffd700;
+  /* Componentes */
+  --header-bg-color: var(--gray-800);
+  --fieldset-bg-color: var(--gray-800);
+  --header-bg-color: var(--gray-800);
+  --button-bg-color: var(--green-500);
+  --button-hover-bg-color: var(--gray-800);
+  --hover-text-color: #ffffff;
+  --toggle-theme-icon: #ff9100e0;
+  --text-legend-color: var(--green-400);
 
-  --required-color: #ff0000;
+  /* Estados e elementos especiais */
+  --required-color: var(--red-500);
   --box-shadow-color: 0 0 10px rgba(255, 255, 255, 0.2);
-  --box-shadow-hover-color: 0 0 15px rgba(0, 255, 0, 0.897);
-  --text-box-shadow-color: 0 0 15px rgba(0, 255, 0, 0.897);
+  --box-shadow-hover-color: 0 0 15px rgba(76, 175, 80, 0.6);
+  --text-box-shadow-color: 0 0 15px rgba(30, 243, 37, 0.781);
+  --box-shadow-hover-button: 0 0 10px rgba(0, 255, 0, 0.897);
+  --box-shadow-fieldset: 0 0 10px rgba(15, 250, 15, 0.795);
 
-  --details-background-color: rgb(46, 46, 46);
-  --code-background-color: #282c34;
-  --code-border-color: #3e4451;
-  --code-color: #00ff00;
-  --strong-code-color: #00ff00;
-
-  --thead-background-color: #212529;
-  --tbody-background-color: #282c34;
-  --table-font-color: #f1f5f9;
-  --border-table-color: #1a1818bb;
-
-  --footer-bg-color: #333;
-  --footer-text-color: #f1f5f9;
-  --footer-link-color: #00ff00;
+  /* Rodapé */
+  --footer-bg-color: var(--gray-800);
+  --footer-text-color: var(--gray-100);
+  --footer-link-color: var(--green-500);
   --footer-link-hover-color: #ffffff;
+
+  /* Validação */
+  --error-color: var(--red-500);
+  --success-color: var(--green-500);
 }
 
 /* estilização do body */
 body {
+  transition-property: background-color, font-size, transform, color;
+  transition: 1s ease-in-out;
   background-color: var(--bg-color);
   color: var(--font-color);
   font-family: "Ubuntu", sans-serif;
@@ -106,19 +164,22 @@ body {
 
 /* estilização do header */
 header {
+  transition-property: background-color, font-size, transform, color;
+  transition: 1s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: space-around;
   gap: var(--margin-small);
-
   padding: var(--padding-large);
   background-color: var(--header-bg-color);
 }
 
 /* estilização do header - h1 */
 h1 {
+  transition-property: background-color, font-size, transform, color;
+  transition: 1s ease-in-out;
   color: var(--button-bg-color);
-  text-shadow: var(--text-box-shadow-color);
+  text-shadow: var(--text-shadow-color);
   text-align: center;
   margin: var(--margin-small);
   padding: var(--padding-small) var(--padding-medium);
@@ -127,13 +188,18 @@ h1 {
 
 /* estilizando o toggle-Thema */
 .toggle_Theme {
+  transition-property: background-color, font-size, transform, color;
+  transition: 1s ease-in-out;
   margin: var(--margin-small);
   padding: var(--padding-small) var(--padding-medium);
 }
 .toggle_Theme:hover {
+  transition-property: background-color, font-size, transform, color;
+  transition: .5s ease-in-out;
   color: var(--toggle-theme-icon);
   border: solid var(--border-width) var(--button-bg-color);
   background-color: var(--header-bg-color);
+  box-shadow: var(--box-shadow-hover-button);
 }
 .icon_Theme {
   font-size: var(--font-size-large);
@@ -141,6 +207,8 @@ h1 {
 
 /* estilização da main */
 main {
+  transition-property: background-color, font-size, transform, color;
+  transition: 1s ease-in-out;
   max-width: 100%;
   width: 90%;
   margin: var(--margin-large) auto;
@@ -149,24 +217,28 @@ main {
 
 /* estilização do fieldset */
 fieldset {
+  transition-property: background-color, font-size, transform, color;
+  transition: 1s ease-in-out;
   display: flex;
   flex-direction: column;
-  background-color: var(--header-bg-color);
+  background-color: var(--fieldset-bg-color);
   border-radius: var(--border-radius-medium);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  box-shadow: var(--shadow-lg);
   color: var(--font-color);
   padding: var(--padding-large);
   margin-bottom: 20px;
   gap: 1rem;
+  box-shadow: var(--box-shadow-fieldset);
 }
 
 /* estilização do fieldset - legend */
-h3,
 legend {
-  text-shadow: var(--text-box-shadow-color);
+  transition-property: background-color, font-size, transform, color;
+  transition: 1s ease-in-out;
+  text-shadow: var(--text-shadow-color);
   border-radius: 45%;
   padding: 1rem;
-  color: var(--button-bg-color);
+  color: var(--text-legend-color);
   text-align: center;
   padding: var(--padding-small);
   font-size: var(--font-size-large);
@@ -183,6 +255,8 @@ form {
 /* estilização dos div inputs */
 input,
 select {
+  transition-property: background-color, font-size, transform, color;
+  transition: 1s ease-in-out;
   box-shadow: var(--box-shadow-color);
   background-color: var(--bg-color);
   border: 2px solid var(--border-color);
@@ -196,6 +270,8 @@ select {
 }
 input:hover,
 select:hover {
+  transition-property: background-color, font-size, transform, color;
+  transition: .5s ease-in-out;
   border: 2px solid var(--button-bg-color);
   box-shadow: var(--box-shadow-hover-color);
 }
@@ -204,6 +280,8 @@ input:focus {
   box-shadow: var(--box-shadow-hover-color);
 }
 select {
+  transition-property: background-color, font-size, transform, color;
+  transition: 1s ease-in-out;
   cursor: pointer;
   height: 100%;
 }
@@ -220,7 +298,9 @@ input[type="number"] {
   justify-content: space-between;
 }
 label {
-  display: block;
+  transition-property: background-color, font-size, transform, color;
+  transition: 1s ease-in-out;
+  color: var(--label-cont-color);
 }
 .required {
   color: var(--required-color);
@@ -265,8 +345,7 @@ label {
   width: 10%;
 }
 .span_error {
-  color: #f64348;
-  display: none;
+  color: var(--error-color);
   display: block;
 }
 /* estilizando o input type=senha */
@@ -291,11 +370,15 @@ label {
   align-items: center;
   justify-content: center;
   width: 8%;
+  border-radius: 50%;
   height: 20px;
 }
 .toggleSenha:hover {
-    cursor: pointer;
-    color: var(--button-bg-color);
+  transition-property: background-color, font-size, transform, color;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  color: var(--button-bg-color);
+  box-shadow: var(--box-shadow-hover-color);
 }
 .eye-icon {
   position: absolute;
@@ -307,14 +390,16 @@ label {
 
 /* Estilização de acerto e erro */
 .error {
-  border: 1px solid #f64348;
+  border: 1px solid var(--error-color);
 }
 .success {
-  border: 1px solid #43f67f;
+  border: 1px solid var(--success-color);
 }
 
 /* estilização do fieldset - button */
 button {
+  transition-property: background-color, font-size, transform, color;
+  transition: 1s ease-in-out;
   text-align: center;
   font-weight: 700;
   padding: var(--padding-small) var(--padding-medium);
@@ -323,31 +408,38 @@ button {
   border: solid var(--border-width) var(--button-bg-color);
   cursor: pointer;
   border-radius: var(--border-radius-small);
+  box-shadow: var(--box-shadow-color);
 }
 button:hover {
+  transition-property: background-color, font-size, transform, color;
+  transition: .5s ease-in-out;
   background-color: var(--header-bg-color);
   color: var(--hover-text-color);
   border: solid var(--border-width) var(--button-bg-color);
+  box-shadow: var(--box-shadow-hover-button);
 }
 
 /* estilização do footer */
 footer {
+  transition-property: background-color, font-size, transform, color;
+  transition: 1s ease-in-out;
   background-color: var(--footer-bg-color);
   color: var(--footer-text-color);
   text-align: center;
-  padding: var(
-    --padding-large
-  ); /* Você pode definir essa variável se necessário */
-  margin-top: var(
-    --margin-large
-  ); /* Você pode definir essa variável se necessário */
+  padding: var(--padding-large);
+  margin-top: var(--margin-large);
 }
 footer a {
+  transition-property: background-color, font-size, transform, color;
+  transition: 1s ease-in-out;
   color: var(--footer-link-color);
   text-decoration: none;
 }
 
 footer a:hover {
+  transition-property: background-color, font-size, transform, color;
+  transition: .5s ease-in-out;
   color: var(--footer-link-hover-color);
   text-decoration: underline;
+  text-shadow: var(--text-box-shadow-color);
 }
