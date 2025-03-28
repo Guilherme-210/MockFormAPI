@@ -56,7 +56,6 @@ document.getElementById("submit").addEventListener("click", async function () {
     if (!validatePassword()) {
       return
     }
-    confirmSenha.classList.remove("error")
 
     user = {
       FirstName: inputfirstName.value.trim(),

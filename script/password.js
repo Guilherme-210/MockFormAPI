@@ -1,17 +1,23 @@
 export default function validatePassword() {
   const senha = document.getElementById("senha"),
     confirmSenha = document.getElementById("confirmSenha")
-    try {
-      if (senha.value.length < 8 || confirmSenha.value.length < 8) {
-        if (senha.value.length < 8) {
-          senha.classList.add("error")
+  try {
+    senha.classList.remove("error")
+    confirmSenha.classList.remove("error")
+
+    if (senha.value.length < 8 || confirmSenha.value.length < 8) {
+      if (senha.value.length < 8) {
+        senha.classList.add("error")
+        alert("Campo de senha deve conter ao menos 8 caracteres.")
+        Promise.reject("Campo de senha deve conter ao menos 8 caracteres.")
+        return
       }
       if (confirmSenha.value.length < 8) {
         confirmSenha.classList.add("error")
+        alert("Campo de senha deve conter ao menos 8 caracteres.")
+        Promise.reject("Campo de senha deve conter ao menos 8 caracteres.")
+        return
       }
-      alert("Campo de senha deve conter ao menos 8 caracteres.")
-      Promise.reject("Campo de senha deve conter ao menos 8 caracteres.")
-      return 
     }
 
     if (senha.value != confirmSenha.value) {
