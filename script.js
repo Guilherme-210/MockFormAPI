@@ -98,24 +98,40 @@ document.getElementById("submit").addEventListener("click", async function () {
 
     console.log("Enviado.")
 
-    inputfirstName.value = ""
-    inputLastName.value = ""
-    inputCPF.value = ""
-    inputCountryCode.value = ""
-    inputCellphone.value = ""
-    inputEmail.value = ""
-    inputBirthDate.value = ""
-    inputGender.value = ""
-    inputCountry.value = ""
-    inputState.value = ""
-    inputCity.value = ""
-    inputCEP.value = ""
-    inputDistrict.value = ""
-    inputAddress.value = ""
-    inputSenha.value = ""
-    inputConfirmSenha.value = ""
-    inputAddressNumber.value = ""
-    inputComplement.value = ""
+    let loading
+
+    const theme = document.body.getAttribute("data-theme")
+
+    if (theme === "light") {
+      loading = document.getElementById("loading_blue")
+      loading.style.display = "block"
+    } else {
+      loading = document.getElementById("loading_green")
+      loading.style.display = "block"
+    }
+
+    setTimeout(() => {
+      loading.style.display = "none"
+
+      inputfirstName.value = ""
+      inputLastName.value = ""
+      inputCPF.value = ""
+      inputCountryCode.value = ""
+      inputCellphone.value = ""
+      inputEmail.value = ""
+      inputBirthDate.value = ""
+      inputGender.value = ""
+      inputCountry.value = ""
+      inputState.value = ""
+      inputCity.value = ""
+      inputCEP.value = ""
+      inputDistrict.value = ""
+      inputAddress.value = ""
+      inputSenha.value = ""
+      inputConfirmSenha.value = ""
+      inputAddressNumber.value = ""
+      inputComplement.value = ""
+    }, 1000 * 2)
 
     console.log(user)
     return Promise.resolve(

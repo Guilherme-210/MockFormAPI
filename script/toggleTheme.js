@@ -4,22 +4,24 @@ function toggle_Theme() {
   const icon = document.getElementById("icon_Theme")
 
   // Obtém o tema atual ou assume "light" como padrão
-  let currentTheme = body.getAttribute("data-theme") || "light"
-
+  const currentTheme = body.getAttribute("data-theme") || "light"
+  const newTheme = currentTheme === "light" ? "dark" : "light"
+  
   // Aplica o novo tema no body
-  let newTheme = currentTheme === "light" ? "dark" : "light"
   body.setAttribute("data-theme", newTheme)
 
   // Salva a escolha do usuário no localStorage
   localStorage.setItem("theme", newTheme)
-
-  // Alterna o ícone
-  icon.setAttribute("name", newTheme === "dark" ? "sunny" : "moon")
+  
+  // Alterna o ícone, se existir
+  if (icon) {
+    icon.setAttribute("name", newTheme === "dark" ? "sunny" : "moon")
+  }
 }
 
 // Aplicar o tema salvo ao carregar a página
 window.addEventListener("DOMContentLoaded", () => {
-  let savedTheme = localStorage.getItem("theme") || "light"
+  const savedTheme = localStorage.getItem("theme") || "light"
   document.body.setAttribute("data-theme", savedTheme)
 
   // Atualiza o ícone do botão de acordo com o tema salvo
@@ -28,3 +30,5 @@ window.addEventListener("DOMContentLoaded", () => {
     icon.setAttribute("name", savedTheme === "dark" ? "sunny" : "moon")
   }
 })
+
+
